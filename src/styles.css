@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+
+.top30{
+  margin-top: 30px;
+}
+
+.top60{
+  margin-top: 60px;
+}
+.bd-navbar {
+    min-height: 4rem;
+    background-color: #E5A62C;
+}
+
+.nombre{
+margin-top:  150px;
+margin-left: 220px;
+}
+
+.text-white{
+  color: white;
+}
+.dropdown-menu a{
+    color: #E5A62C !important;
+}
+
+.imagenIcon{
+  width: 30px;
+  height: 30px;
+
+}
+
+#chistes{
+ position: relative;
+}
+
+.perfil{
+  margin-top: 80px;
+  margin-left: 50px;
+  width: 150px;
+  height: 150px;
+}
+.sobre {
+ position:absolute;
+ top:0px;
+ left:0px;
+ border:none;
+}
+.image100{
+  width: 100%;
+}
+
+.al50{
+  height: 250px;
+}
+.footer-bg{
+  background-color: #E5A62C;
+}
+
+.terms-bg{
+  background-color: #B28122;
+}
+.normaltop{
+  margin-top: 62px;
+}
+.marginbottom{
+  margin-bottom: 80px;
+}
+.normaltop2{
+  margin-top: 120px;
+}
+.marginleft{
+  margin-left: 10px;
+}
+.hrwhite{
+  border-color: white;
+}
