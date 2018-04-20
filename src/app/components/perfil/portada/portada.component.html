@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12" id="chistes">
+    <img
+    [src]="_profile.informacion.portada| portada:url"
+    class="image100 al50" />
+
+    <a>
+      <img class="sobre perfil rounded-circle"
+      [src]="_profile.informacion.foto"
+      width="300" height="300" />
+    </a>
+    <a class="sobre text-white nombre">
+      <h2>
+        {{_profile.informacion.nombre}}
+      </h2>
+    </a>
+  </div>
+</div>

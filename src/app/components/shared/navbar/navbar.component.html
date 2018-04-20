@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-dark  bd-navbar">
+  <a class="navbar-brand" [routerLink]="['home']">
+    <img src="../../../assets/images/t.png" width="30" height="30" alt="">
+    TrabaApp
+  </a>
+  <button class="navbar-toggler " type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" *ngIf="auth.isAuthenticated()"
+      routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['trabajos']">Trabajos para ti</a>
+      </li>
+
+      <li class="nav-item" *ngIf="auth.isAuthenticated()"
+      routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['talentos']">Encuentra talento</a>
+      </li>
+
+    </ul>
+
+
+    <form class="form-inline my-2 my-lg-0 input-group mb-3 col-md-6">
+      <input type="text" class="form-control" placeholder="Buscar en esta pagina">
+      <div class="input-group-append">
+        <button class="btn btn-outline-warning text-white" type="button">Buscar</button>
+      </div>
+    </form>
+
+    <button class="btn  my-2 my-sm-0 btn-outline-warning marginleft width-200 text-white"
+    type="submit" (click)="login()" *ngIf="!auth.isAuthenticated()">Ingresa!</button>
+
+
+    <div class="btn-group" role="group" *ngIf="auth.isAuthenticated()">
+      <button id="btnGroupDrop1" type="button"
+      class="btn btn-outline-warning dropdown-toggle text-white"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+        Mi cuenta
+      </button>
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" [routerLink]="['perfil','informacion']">Perfil</a>
+        <a class="dropdown-item" href="#">Configuracion</a>
+        <a class="dropdown-item" (click)="salir()">Salir</a>
+      </div>
+    </div>
+
+  </div>
+</nav>

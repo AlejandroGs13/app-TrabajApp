@@ -1,0 +1,172 @@
+<div class="top30">
+<div class="row">
+  <div class="col-md-4">
+    <button type="button" name="button"
+    class="btn btn-outline-warning" (click)="activos()">
+      <h6 *ngIf="activo">
+        Editar informacion
+      </h6>
+      <h6 *ngIf="!activo">
+        bloquear
+      </h6>
+    </button>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-outline-warning"
+      (click)="datos()" [disabled]="dato">
+        Datos
+      </button>
+      <button type="button" class="btn btn-outline-warning"
+      (click)="datos()" [disabled]="!dato">
+        Direccion
+      </button>
+    </div>
+  </div>
+</div>
+  <form  (ngSubmit)="setData(forma)"class="top30" *ngIf="dato" #forma="ngForm">
+      <fieldset [disabled]="activo">
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault01">Nombre (s)</label>
+            <input type="text" [value]="_profile.informacion.nombre|valueNull"
+             class="form-control" placeholder="Nombres(s)"
+            [value]="_profile.informacion.nombre|valueNull"
+            [(ngModel)]="_profile.informacion.nombre" name="nombre" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault02">Apellidos</label>
+            <input type="text" [value]="_profile.informacion.apellido|valueNull"
+             class="form-control" placeholder="Apellidos"
+             [(ngModel)]="_profile.informacion.apellido" name="apellidos" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefaultUsername">NickName</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input type="text" id="validationDefaultUsername" [value]="_profile.informacion.nickname|valueNull"
+               class="form-control" name="genero" placeholder="Username"
+               [(ngModel)]="_profile.informacion.genero"
+               aria-describedby="inputGroupPrepend2" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault01">Telefono</label>
+            <input type="text" [value]="_profile.informacion.telefono|valueNull"
+             class="form-control" [(ngModel)]="_profile.informacion.telefono"
+             name="telefono" placeholder="Telefono" required>
+          </div>
+          <div class="col-md-3 mb-3">apellido
+            <label for="validationDefault02">Edad</label>
+            <input type="text" [value]="_profile.informacion.edad|valueNull"
+             class="form-control" name="edad"
+             [(ngModel)]="_profile.informacion.edad"
+             placeholder="Edad" required>
+          </div>
+          <div class="col-md-3 mb-3 form-group">
+              <label for="inputState">Genero</label>
+              <select id="inputState" name="genero"
+              [(ngModel)]="_profile.informacion.genero"
+              class="form-control">
+                <option selected>Hombre</option>
+                <option selected>Mujer</option>
+                <option selected>Genero...</option>
+              </select>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault02">Foto de perfil</label>
+            <input type="text" [value]="_profile.informacion.foto|valueNull"
+             class="form-control" placeholder="url"
+             [(ngModel)]="_profile.informacion.foto"
+             name="foto" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-8 mb-3">
+            <label for="validationDefault01">Skills</label>
+            <input type="text" [value]="_profile.informacion.skills|valueNull"
+             class="form-control" placeholder="Skills"
+             [(ngModel)]="_profile.informacion.skills"
+             name="skills" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault02">Foto de portada</label>
+            <input type="text" [value]="_profile.informacion.portada|valueNull"
+             class="form-control" name="portada" placeholder="url"
+             [(ngModel)]="_profile.informacion.portada" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault01">Facebook</label>
+            <input type="text" [value]="_profile.informacion.facebook|valueNull"
+             class="form-control" placeholder="Facebook"
+             [(ngModel)]="_profile.informacion.facebook"
+              name="facebook" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault02">Twitter</label>
+            <input type="text" [value]="_profile.informacion.twitter|valueNull"
+             class="form-control" placeholder="Twitter"
+             [(ngModel)]="_profile.informacion.twitter"
+             name ="tw" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault02">Linkeding</label>
+            <input type="text" [value]="_profile.informacion.linkedin|valueNull"
+             class="form-control" placeholder="Linkeding"
+             [(ngModel)]="_profile.informacion.linkedin"
+              name ="in" required>
+          </div>
+       </div>
+      </fieldset>
+      <button class="btn btn-outline-warning"
+      type="submit">Enviar datos de usuario</button>
+  </form>
+
+
+
+    <form class="top30" *ngIf="!dato">
+        <fieldset [disabled]="activo">
+          <div class="form-row">
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault01">Calle</label>
+              <input type="text" [value]="_profile.domicilio.calle|valueNull"
+               class="form-control" placeholder="Calle" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault02">Numero</label>
+              <input type="text" [value]="_profile.domicilio.numero|valueNull"
+               class="form-control" placeholder="Numero" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault02">Codigo postal</label>
+              <input type="text" [value]="_profile.domicilio.cp|valueNull"
+               class="form-control" placeholder="CP" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault02">Ciudad</label>
+              <input type="text" [value]="_profile.domicilio.ciudad|valueNull"
+               class="form-control" placeholder="Ciudad" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault01">Colonia</label>
+              <input type="text" [value]="_profile.domicilio.colonia|valueNull"
+               class="form-control" placeholder="Colonia" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault02">Pais</label>
+              <input type="text" [value]="_profile.domicilio.pais|valueNull"
+               class="form-control" placeholder="Pais" required>
+            </div>
+          </div>
+          <button  class="btn btn-outline-warning" type="submit">Enviar datos de facturacion</button>
+        </fieldset>
+    </form>
+</div>
