@@ -1,2 +1,2 @@
 # app-TrabajApp
-main poryect trabajaap
+Codigo proyecto TrabajApp
